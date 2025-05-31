@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Intermediate Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Task 2: Intermediate Web Development</h1>
+            <p>Contact Form, Responsive Layout, Form Validation & Dynamic To-Do List</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" onclick="showSection('contact')">Contact Form</button>
+            <button class="nav-btn" onclick="showSection('layout')">Responsive Layout</button>
+            <button class="nav-btn" onclick="showSection('todo')">Dynamic To-Do List</button>
+        </nav>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="section active">
+            <h2>Contact Form with Validation</h2>
+            <form id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message">Please enter your full name</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message">Please enter a valid email address</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <span class="error-message">Please enter a valid phone number</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="business">Business Partnership</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                    <span class="error-message">Please select a subject</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Enter your message here..."></textarea>
+                    <span class="error-message">Please enter your message (minimum 10 characters)</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        Subscribe to our newsletter
+                    </label>
+                </div>
+
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div id="formSuccess" class="success-message">
+                Thank you! Your message has been sent successfully.
+            </div>
+        </section>
+
+        <!-- Responsive Layout Section -->
+        <section id="layout" class="section">
+            <h2>Responsive Layout Demo</h2>
+            
+            <!-- Flexbox Navigation -->
+            <div class="demo-nav">
+                <div class="logo">Logo</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- CSS Grid Content -->
+            <div class="grid-container">
+                <div class="grid-item header-item">
+                    <h3>Header Area</h3>
+                    <p>This is the main header section using CSS Grid</p>
+                </div>
+                <div class="grid-item sidebar">
+                    <h4>Sidebar</h4>
+                    <ul>
+                        <li>Navigation Item 1</li>
+                        <li>Navigation Item 2</li>
+                        <li>Navigation Item 3</li>
+                    </ul>
+                </div>
+                <div class="grid-item content">
+                    <h4>Main Content</h4>
+                    <p>This is the main content area. It adapts to different screen sizes using CSS Grid and media queries.</p>
+                    <p>Resize your browser window to see the responsive behavior in action!</p>
+                </div>
+                <div class="grid-item footer-item">
+                    <h4>Footer</h4>
+                    <p>Footer content spans across the bottom</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic To-Do List Section -->
+        <section id="todo" class="section">
+            <h2>Dynamic To-Do List</h2>
+            
+            <div class="todo-container">
+                <div class="todo-input-section">
+                    <input type="text" id="todoInput" placeholder="Enter a new task..." maxlength="100">
+                    <select id="todoPriority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <button id="addTodoBtn" class="btn">Add Task</button>
+                </div>
+
+                <div class="todo-filters">
+                    <button class="filter-btn active" data-filter="all">All Tasks</button>
+                    <button class="filter-btn" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="high">High Priority</button>
+                </div>
+
+                <div class="todo-stats">
+                    <span>Total: <span id="totalTasks">0</span></span>
+                    <span>Pending: <span id="pendingTasks">0</span></span>
+                    <span>Completed: <span id="completedTasks">0</span></span>
+                </div>
+
+                <ul id="todoList" class="todo-list"></ul>
+
+                <div class="todo-actions">
+                    <button id="clearCompleted" class="btn btn-secondary">Clear Completed</button>
+                    <button id="clearAll" class="btn btn-danger">Clear All</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
