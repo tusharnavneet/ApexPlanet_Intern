@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 - Advanced Web Development</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>ApexPlanet Task 3</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#quiz">Interactive Quiz</a></li>
+                <li><a href="#carousel">Image Carousel</a></li>
+                <li><a href="#api">Weather API</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Advanced Web Development Showcase</h1>
+                <p>Demonstrating responsive design, interactive JavaScript, and API integration</p>
+            </div>
+        </section>
+
+        
+        <section id="quiz" class="quiz-section">
+            <div class="container">
+                <h2>Interactive JavaScript Quiz</h2>
+                <div class="quiz-container">
+                    <div id="quiz-start" class="quiz-start">
+                        <h3>Test Your Web Development Knowledge</h3>
+                        <p>Answer 5 questions about HTML, CSS, and JavaScript</p>
+                        <button id="start-quiz-btn" class="btn btn-primary">Start Quiz</button>
+                    </div>
+                    
+                    <div id="quiz-content" class="quiz-content hidden">
+                        <div class="quiz-header">
+                            <div class="progress-bar">
+                                <div id="progress" class="progress"></div>
+                            </div>
+                            <span id="question-counter">Question 1 of 5</span>
+                        </div>
+                        
+                        <div class="question-container">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options" class="answer-options"></div>
+                        </div>
+                        
+                        <button id="next-btn" class="btn btn-secondary hidden">Next Question</button>
+                    </div>
+                    
+                    <div id="quiz-results" class="quiz-results hidden">
+                        <h3>Quiz Complete!</h3>
+                        <div id="score-display"></div>
+                        <div id="result-message"></div>
+                        <button id="restart-quiz-btn" class="btn btn-primary">Restart Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+\
+        <section id="carousel" class="carousel-section">
+            <div class="container">
+                <h2>Interactive Image Carousel</h2>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev-btn" id="prev-btn">❮</button>
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track" id="carousel-track">
+                                <li class="carousel-slide current-slide">
+                                    <img src="https://picsum.photos/800/400?random=1" alt="Landscape 1">
+                                    <div class="slide-content">
+                                        <h3>Beautiful Landscape</h3>
+                                        <p>Stunning natural scenery captured in high definition</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=2" alt="Architecture">
+                                    <div class="slide-content">
+                                        <h3>Modern Architecture</h3>
+                                        <p>Contemporary building design and urban planning</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=3" alt="Technology">
+                                    <div class="slide-content">
+                                        <h3>Technology Innovation</h3>
+                                        <p>Latest trends in digital technology and development</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=4" alt="Nature">
+                                    <div class="slide-content">
+                                        <h3>Natural Wonders</h3>
+                                        <p>Exploring the beauty of our natural world</p>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="https://picsum.photos/800/400?random=5" alt="Urban Life">
+                                    <div class="slide-content">
+                                        <h3>Urban Lifestyle</h3>
+                                        <p>The dynamic energy of city life and culture</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="carousel-btn next-btn" id="next-btn">❯</button>
+                    </div>
+                    
+                    <div class="carousel-nav">
+                        <button class="carousel-indicator current-indicator" data-slide="0"></button>
+                        <button class="carousel-indicator" data-slide="1"></button>
+                        <button class="carousel-indicator" data-slide="2"></button>
+                        <button class="carousel-indicator" data-slide="3"></button>
+                        <button class="carousel-indicator" data-slide="4"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="api" class="api-section">
+            <div class="container">
+                <h2>Weather API Integration</h2>
+                <div class="weather-container">
+                    <div class="weather-search">
+                        <input type="text" id="city-input" placeholder="Enter city name..." class="weather-input">
+                        <button id="get-weather-btn" class="btn btn-primary">Get Weather</button>
+                    </div>
+                    
+                    <div id="weather-display" class="weather-display hidden">
+                        <div class="weather-card">
+                            <div class="weather-header">
+                                <h3 id="city-name"></h3>
+                                <p id="weather-date"></p>
+                            </div>
+                            <div class="weather-main">
+                                <div class="temperature">
+                                    <span id="temp-value"></span>
+                                    <span class="temp-unit">°C</span>
+                                </div>
+                                <div class="weather-icon">
+                                    <div id="weather-emoji" class="weather-emoji">🌤️</div>
+                                </div>
+                            </div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Description:</span>
+                                    <span id="weather-desc"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Feels like:</span>
+                                    <span id="feels-like"></span>°C
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Humidity:</span>
+                                    <span id="humidity"></span>%
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Wind Speed:</span>
+                                    <span id="wind-speed"></span> km/h
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="weather-error" class="weather-error hidden">
+                        <p>City not found. Please try again with a different city name.</p>
+                    </div>
+                    
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>Loading weather data...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ApexPlanet Internship Task 3 - Advanced Web Development</p>
+            <p>Responsive Design | Interactive JavaScript | API Integration</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
